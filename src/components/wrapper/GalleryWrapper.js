@@ -9,7 +9,7 @@ export const GalleryWrapper = (props) => {
   const [first, setfirst] = useState('');
 
   useEffect(() => {
-    setfirst(pathname);
+      setfirst(pathname);
   }, [pathname,setfirst])
 
   return (
