@@ -9,7 +9,7 @@ export const InputSearch = () => {
 
   return (
     <form 
-      class="searcherWrapper"
+      className="searcherWrapper"
       onSubmit={handlerSubmit}
       >
         <input/>

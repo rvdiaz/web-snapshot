@@ -7,13 +7,13 @@ export const GalleryProvider=(props)=>{
     const [loading, setloading] = useState(false);
 
     const search=(query)=>{
-        //axios request here
+        
     }
     
     return (
-        <GalleryProvider.Provider value={{images,loading,search}}>
+        <GalleryContext.Provider value={{images,loading,search}}>
             {props.children}
-        </GalleryProvider.Provider>
+        </GalleryContext.Provider>
     )
 }
 

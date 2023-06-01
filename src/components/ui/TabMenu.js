@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 export const TabMenu = (props) => {
     const {title}=props;
@@ -8,11 +9,11 @@ export const TabMenu = (props) => {
   }  
 
   return (
-    <a
+    <NavLink
         className="tab"
-        onClick={handleClick}
+        to={`/${title}`}
     >
         {title}
-    </a>
+    </NavLink>
   )
 }

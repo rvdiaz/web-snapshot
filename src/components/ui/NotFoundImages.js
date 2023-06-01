@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const NotFound = () => {
+export const NotFoundImages = () => {
   return (
     <div className="notFoundWrapper">
         <h4 className="galleryTitle">

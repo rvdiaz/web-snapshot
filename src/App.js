@@ -1,19 +1,28 @@
 import React from 'react'
-import { InputSearch } from './components/ui/InputSearch'
-import { Tabs } from './components/ui/Tabs'
+import { Header } from './components/ui/Header'
 import { GalleryWrapper } from './components/wrapper/GalleryWrapper'
 
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import data from './dataSearch/dataSearch.json';
+import { GalleryProvider } from './context/GalleryContext';
+
 export const App = () => {
+  const {items}=data;
   return (
-    <div className="generalWrapper">
-        <div className="header">
-            <h1 className="mainTitle">
-                Snapshot
-            </h1>
-            <InputSearch/>
-            <Tabs/>
-        </div>
-        <GalleryWrapper/>
-    </div>
+    <GalleryProvider>
+        <BrowserRouter>
+        <div className="generalWrapper">
+          <Header/>
+          <Routes>
+              <Route path='/' exact element={<GalleryWrapper title={items[0]}/>}></Route>
+              {items.map((item,index)=>(
+                <Route key={index} path={`/${item}`} element={<GalleryWrapper title={item}/>}/>
+              ))}
+          </Routes>
+          <GalleryWrapper/>
+       </div>
+      </BrowserRouter>
+    </GalleryProvider>
+
   )
 }
