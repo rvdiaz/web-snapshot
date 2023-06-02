@@ -101,7 +101,9 @@ html {
     transform: scale(1.25);
     transition: transform 1.25s;
 }
-
+.notFoundWrapper {
+    text-align: center;
+}
 @media screen and (max-width: 768px) {
     .gridContainer {
       grid-template-columns: 1fr 1fr;

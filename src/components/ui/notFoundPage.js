@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const notFoundPage = () => {
+export const NotFoundPage = () => {
   return (
     <h4 className="galleryTitle">
-        No Images Found
+        Page No Found
     </h4>
   )
 }

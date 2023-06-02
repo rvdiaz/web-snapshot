@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export const InputSearch = () => {
-
+  const input=useRef(null);
+  const navigate=useNavigate();
+  
   const handlerSubmit=(e)=>{
     e.preventDefault();
-    console.log('submit');
+    if(input.current.value!=='')
+      navigate(`Search?name=${input.current.value}`);
   }
 
   return (
@@ -12,7 +16,9 @@ export const InputSearch = () => {
       className="searcherWrapper"
       onSubmit={handlerSubmit}
       >
-        <input/>
+        <input
+          ref={input}
+        />
         <button
           type="submit"
         >
