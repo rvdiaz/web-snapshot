@@ -11,20 +11,20 @@ export const App = () => {
   const {items}=data;
   return (
     <GalleryProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/web-snapshot">
         <div className="generalWrapper">
           <Header/>
           <Routes>
-              <Route path='/web-snapshot/' element={<GalleryWrapper title={items[0]}/>}></Route>
+              <Route path='/' element={<GalleryWrapper title={items[0]}/>}></Route>
               {items.map((item,index)=>(
                 <Route key={index} path={`/${item}`} element={<GalleryWrapper title={item}/>}/>
               ))}
               <Route 
-                path='/web-snapshot/' 
+                path='/Search' 
                 element={<GalleryWrapper 
                 />}/>
               <Route 
-                path='/web-snapshot/*' 
+                path='*' 
                 element={<NotFoundPage 
                 />}/>
           </Routes>
