@@ -15,16 +15,16 @@ export const App = () => {
         <div className="generalWrapper">
           <Header/>
           <Routes>
-              <Route path='/' element={<GalleryWrapper title={items[0]}/>}></Route>
+              <Route path='/web-snapshot/' element={<GalleryWrapper title={items[0]}/>}></Route>
               {items.map((item,index)=>(
                 <Route key={index} path={`/${item}`} element={<GalleryWrapper title={item}/>}/>
               ))}
               <Route 
-                path='/Search' 
+                path='/web-snapshot/' 
                 element={<GalleryWrapper 
                 />}/>
               <Route 
-                path='*' 
+                path='/web-snapshot/*' 
                 element={<NotFoundPage 
                 />}/>
           </Routes>
